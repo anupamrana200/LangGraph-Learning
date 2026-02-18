@@ -39,7 +39,7 @@ def calculator(first_num: float, second_num: float, operation: str) -> dict:
             result = first_num - second_num
         elif operation == "mul":
             result = first_num * second_num
-        elif operation == "div":
+        elif operation == "div" :
             if second_num == 0:
                 return {"error": "Division by zero is not allowed"}
             result = first_num / second_num
