@@ -32,7 +32,7 @@ if "thread_id" not in st.session_state:
 if "chat_threads" not in st.session_state:
     st.session_state["chat_threads"] = retrieve_all_threads()
 
-add_thread(st.session_state["thread_id"])
+# add_thread(st.session_state["thread_id"])
 
 # ============================ Sidebar ============================
 st.sidebar.title("LangGraph Chatbot")
@@ -41,6 +41,7 @@ if st.sidebar.button("New Chat"):
     reset_chat()
 
 st.sidebar.header("My Conversations")
+
 for thread_id in st.session_state["chat_threads"][::-1]:
     if st.sidebar.button(str(thread_id)):
         st.session_state["thread_id"] = thread_id
