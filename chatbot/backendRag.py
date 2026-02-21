@@ -36,9 +36,12 @@ _THREAD_METADATA: Dict[str, dict] = {}
 
 def _get_retriever(thread_id: Optional[str]):
     """Fetch the retriever for a thread if available."""
-    if thread_id and thread_id in _THREAD_RETRIEVERS:
-        return _THREAD_RETRIEVERS[thread_id]
-    return None
+    # if thread_id and thread_id in _THREAD_RETRIEVERS:
+    #     return _THREAD_RETRIEVERS[thread_id]
+    # return None
+    if not thread_id:
+        return None
+    return _THREAD_RETRIEVERS.get(thread_id)
 
 
 def ingest_pdf(file_bytes: bytes, thread_id: str, filename: Optional[str] = None) -> dict:
